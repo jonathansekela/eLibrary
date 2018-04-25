@@ -1,0 +1,4 @@
+#ignore temporary files
+*~
+#ignore object and archive files
+*.[oa]
