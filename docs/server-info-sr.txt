@@ -1,0 +1,5 @@
+localhost
+sz12_library
+sz12_admin
+efef@123
+3306

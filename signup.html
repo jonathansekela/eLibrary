@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup | SZ12-Library</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jonathan Sekela">
+
+	<!-- jQuery js -->
+	<script src="js/jquery-3.2.1-min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<!-- signup and utility scripts -->
+	<script type="text/javascript" src="js/signup.js"></script>
+	<script type="text/javascript" src="js/utility.js"></script>
+
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- signup css -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/signup.css">
+</head>
+<body>
+	<!-- if no javascript enabled -->
+	<noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <div id="body">
+    	<!-- Navigation -->
+
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">SZ12 Library</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse navbar-right" id="navbarCollapse">
+		      <ul class="nav navbar-nav">
+		      	<li><a href="index.html">Home</a></li>
+		        <li><a href="admin.html">Admin<span class="sr-only">(current)</span></a></li>
+		        <li><a href="signup.html">Signup</a></li>
+		        <li><a href="login.html">Login</a></li>
+		        <li><a href="logout.html">Log out</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+    	<div class="container">
+    		<!-- Title row -->
+    		<div class="row">
+    			<div class="jumbotron">
+    				<h1>Login/Sign-up</h1>
+    				<p>EF SZ12 Library</p>
+    			</div>
+    		</div><!-- ./row -->
+    	</div>
+    	<div class="container">
+    		
+    	</div>
+    	<div class="container">
+		    <div class="row centered-form">
+		        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		        	<div class="panel panel-default">
+		        		<div class="panel-heading">
+					    	<h3 class="panel-title">Please sign up for the SZ12 self-service library.</h3>
+					 	</div>
+					 	<div class="panel-body">
+					    	<form name="signup" role="form" method="post" action="php/process_signup.php" onsubmit="return validate(this)">
+
+					    		<p>Email</p>
+					    		<div class="form-group">
+					    			<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+					    		</div>
+
+					    		<p>Password</p>
+					    		<div class="row">
+					    			<div class="col-xs-12 col-sm-6 col-md-6">
+					    				<div class="form-group">
+					    					<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+					    				</div>
+					    			</div>
+					    			<div class="col-xs-12 col-sm-6 col-md-6">
+					    				<div class="form-group">
+					    					<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+					    				</div>
+					    			</div>
+					    		</div>
+					    			
+					    		<input type="submit" value="Register" class="btn btn-info btn-block">
+					    		
+					    	</form><!-- ./form -->
+					    </div>
+			    	</div>
+		    	</div>
+		    </div><!-- ./row centered-form -->
+	</div><!-- ./container -->
+    </div><!-- ./body -->
+</body>
+</html>

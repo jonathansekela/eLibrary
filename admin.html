@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home | SZ12 Library</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jonathan Sekela">
+
+	<!-- jQuery js -->
+	<script src="js/jquery-3.2.1-min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<!-- This script loads your compiled module. -->
+	<script type="text/javascript" src="js/jsQRScanner-master/war/jsPretty/jsqrscanner.nocache.js"></script>
+	<!-- Scanner, dashboard, and utility scripts -->
+	<script type="text/javascript" src="js/qr-scanner.js"></script>
+	<script type="text/javascript" src="js/dashboard.js"></script>
+	<script type="text/javascript" src="js/utility.js"></script>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- qrscanner window css -->
+	<link type="text/css" rel="stylesheet" href="js/JsQRScanner-master/war/JsQRScanner.css">
+	<!-- Admin css -->
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+<body onload="getCheckedOutBooks();">
+	<!-- if no javascript enabled -->
+	<noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+	<div class="body">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">SZ12 Library</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse navbar-right" id="navbarCollapse">
+		      <ul class="nav navbar-nav">
+		      	<li><a href="index.html">Home</a></li>
+		        <li><a href="admin.html">Admin<span class="sr-only">(current)</span></a></li>
+		        <li><a href="signup.html">Signup</a></li>
+		        <li><a href="login.html">Login</a></li>
+		        <li><a href="logout.html">Log out</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+		<!-- Title row -->
+		<div class="row">
+			<div class="jumbotron">
+				<h1>Admin Home</h1>
+				<p>EF SZ12 Library</p>
+			</div>
+		</div> <!-- ./row -->
+
+		<!-- Books management -->
+		<div class="container books-management">
+			<div class="row">
+				<h3>Books Management</h3>
+				<button class="btn btn-primary btn-block" onclick="getCheckedOutBooks();">Checked Out Books</button>
+				<table class="table" id="checked-out-books"></table>
+				<div class="row">
+					<div class="col">
+						<button class="btn btn-primary btn-block" onclick="addBookToLibrary();">Add book to library</button>
+					</div>
+					<div class="col">
+						<button class="btn btn-danger btn-block" onclick="removeBookFromLibrary();">Remove book from library</button>
+					</div>
+				</div><!-- ./row -->
+				<div class="row addrem-books"></div>
+			</div><!-- ./row -->
+		</div><!-- ./books-management -->
+
+		<!-- Users management -->
+		<div class="container users-management">
+			<div class="row">
+				<h3>Users Management</h3>
+				<button class="btn btn-primary btn-block" onclick="getUsers();">Get users</button>
+			</div> <!-- ./row -->
+		</div> <!-- ./users-management -->
+
+	</div>
+</body>
+</html>

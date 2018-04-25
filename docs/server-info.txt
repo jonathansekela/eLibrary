@@ -1,0 +1,5 @@
+Server: localhost
+Name: sz12_library
+Username: sz12_admin
+Password: efef@123
+Port number: 3306
