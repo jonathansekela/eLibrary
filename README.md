@@ -8,6 +8,7 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
 
 #### Current to-Do
  1. __Server Laptop__
+    * _Acquire_ server laptop :v
     * Developer mode on
     * Bash shell enabled and installed
     * LAMP stack working properly
