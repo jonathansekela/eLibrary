@@ -7,7 +7,7 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
 * [Bootstrap](https://getbootstrap.com/ "Bootstrap: the most popular HTML, CSS, and JS library in the world")
 
 #### Current to-Do
- 1. Server Laptop
+ 1. __Server Laptop__
     * Developer mode on
     * Bash shell enabled and installed
     * LAMP stack working properly
@@ -16,14 +16,14 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
         * Atom
         * Notepad++
      * Admin password would make all this run **so much** smoother...
- 3. AWS Site?
- 4. Admin page
+ 3. __AWS Site?__
+ 4. __Admin page__
     * Add book
     * Remove book
     * Look at books
     * Look at users
     * Email user
-4. Login section
+4. __Login section__
     * form with email/password
     * verification code
     * index page redirects to login w/o cookie
