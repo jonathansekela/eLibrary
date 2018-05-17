@@ -33,4 +33,3 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
     * form with email/password :white_check_mark:
     * verification code
     * index page redirects to login w/o cookie
-###### _Copyright (c) Jonathan Sekela 2018_
