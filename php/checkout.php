@@ -14,13 +14,13 @@ function checkout() {
 							checkout_date = CURDATE(),
 							due_date = DATE_ADD(CURDATE(),
 							INTERVAL 14 DAY)
-						WHERE qrcode = $qrcode;
+						WHERE qrcode = '$qrcode';
 
 						INSERT INTO currently_checked_out_books
 						(user_id, book_qrcode, due_date)
 						VALUES (
-							$user,
-							$qrcode,
+							'$user',
+							'$qrcode',
 							DATE_ADD(CURDATE(), INTERVAL 14 DAY)
 						);";
 		// multi_query for queries that contain multiple actions

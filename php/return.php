@@ -14,11 +14,11 @@ function returnBook() {
 						SET is_available = true,
 							return_date = CURDATE(),
 							due_date = null
-						WHERE qrcode = $qrcode;
+						WHERE qrcode = '$qrcode';
 
 						DELETE FROM currently_checked_out_books 
 						WHERE
-						    book_qrcode = $qrcode AND user_id = $user;";
+						    book_qrcode = '$qrcode' AND user_id = '$user';";
 		$result = $dbconn->multi_query($query);
 		if ($result) {
 			echo "Successful query. Please check database for result";

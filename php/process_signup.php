@@ -40,6 +40,8 @@
             }
             disconnectDB($dbconn,$dbname);
          } else echo "a non-POST request - see system admin";
+         // redirect user to login page on success
+         header("login.html") // @TODO: check and correct this
       ?> 
    </body>
 </html>

@@ -10,7 +10,7 @@ function isInLibrary() {
 				  FROM
 				  	books b
 				  WHERE
-				  	b.qrcode = $qrcode;";
+				  	b.qrcode = '$qrcode';";
 		$myArray = array();
 		$result = $dbconn->query($query);
 		if($result) {

@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
 				FROM
 				 	books b
 				WHERE
-					b.qrcode = $book;";
+					b.qrcode = '$book';";
 	$myArray = array();
 	$result = $dbconn->query($query);
 	if ($result) {

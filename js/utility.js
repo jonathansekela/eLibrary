@@ -43,6 +43,7 @@ function isnewline(aChar) {
 // function takes a date
 // assumes booksDueDate = string
 // booksDueDate format: yyyy-mm-dd
+// utility because library and dashboard both use it
 function isOverdue (booksDueDate) {
     let todaysDate = new Date(Date.now()).toLocaleString();
     mdy = todaysDate.substr(0, 9); // format: [m]m/[d]d/yyyy

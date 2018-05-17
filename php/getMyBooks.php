@@ -12,7 +12,7 @@ function getMyBooks() {
 					    books b,
 					    currently_checked_out_books c
 					WHERE
-					    c.user_id = $user AND b.qrcode = c.book_qrcode;";
+					    c.user_id = '$user' AND b.qrcode = c.book_qrcode;";
 		$myArray = array();
 		$result = $dbconn->query($query);
 		if ($result) {

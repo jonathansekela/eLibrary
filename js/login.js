@@ -39,28 +39,18 @@ function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
 }
 //=======
 
-function validatepasswords(pwd, pwdconf) {
+function validatepassword(pwd) {
   if (isempty(pwd.value)) {
     alert("Error: Please input a password");
     pwd.focus();
-    return false;
-  }
-  if (isempty(pwdconf.value)) {
-    alert("error: Please confirm your password");
-    pwdconf.focus();
-    return false;
-  }
-  if (pwd.value !== pwdconf.value) {
-    alert("Error: Passwords do not match");
-    pwdconf.focus();
     return false;
   }
   return true;
 }
 
 function validate(form) {
-  if(!validateemail(form.email)) return false;
-  if(!validatepasswords(form.password, form.password_confirmation)) return false;
+  if (!validateemail(form.email)) return false;
+  if (!validatepassword(form.password)) return false;
 
   return true;
 }
