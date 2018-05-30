@@ -2,7 +2,8 @@
 function getCheckedOutBooks() {
 	require("utility.php");
 	 if($_SERVER["REQUEST_METHOD"]=="POST") {
-		$user = (int)cleanInput($_POST["user"]); // from string to int
+	 	// @TODO: Delete next line if not needed	
+		// $user = (int)cleanInput($_POST["user"]); // from string to int
 		$dbname="../docs/server-info-sr.txt";
 		logIntoDataBase($dbconn, $dbname);
 		// return title, due date of checked out books with user_id = $user
