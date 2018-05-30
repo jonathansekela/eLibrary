@@ -26,6 +26,7 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
       * create MySQL server instance :white_check_mark:
       * migrate schema from admin computer to instance :white_check_mark:
       * consistent, successful connection from EC2 to RDS
+    * security groups allow for beta testers to reliably connect when given URL
  4. __Admin page__
     * Add book
     * Remove book
