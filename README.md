@@ -1,4 +1,4 @@
-# eLibrary 0.1.1
+# eLibrary 0.2.1
 ### EF eLibrary Web-application.
 #### Purpose: self-service mobile library web-application
 As of April 25th, 2018, I feel comfortable enough with the state of the application to put it on GitHub and treat it as more of a professional development. Thus, the GitHub repository and the readme. This will help me keep track of developments as they come, as well as direct people to projects and work done online.
@@ -17,12 +17,15 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
     * code editor:
         * Atom
         * Notepad++
-     * Admin password would make all this run **so much** smoother...
+    * Admin password would make all this run **so much** smoother...
  2. __AWS Site__
-     * EC2 instance
-     * LAMP stack
-     * setup dev/testing/production suites
-     * AWS RDS
+    * EC2 instance :white_check_mark:
+    * LAMP stack :white_check_mark:
+    * connection to admin computer :white_check_mark:
+    * AWS RDS
+      * create MySQL server instance :white_check_mark:
+      * migrate schema from admin computer to instance :white_check_mark:
+      * consistent, successful connection from EC2 to RDS
  4. __Admin page__
     * Add book
     * Remove book
