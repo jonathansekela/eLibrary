@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- 
    Name: Jonathan Sekela
-   Date: 2018/04/03
+   Date: 2018/05/22
    purpose: SZ12 Library signup processing
 -->         
 <html>
@@ -27,21 +27,19 @@
                         );";
             logMsg($query);
             $result = $dbconn->query($query); 
+            disconnectDB($dbconn,$dbname);
             if(!$result) logMsgAndDie('insert command failed');
             else {
                logMsg('insert successful');
-               echo "signup successful! Please verify your email address at $email.";
                // @TODO: send verification email - doesn't work on localhost, need actual webserver
-
-               // redirect to login page
-               $loc = "localhost/projects/sz12-TEST/login.html";
-               header("Location: $loc")
-
+               $to_email_address = $email;
+               $subject = "Please verify your account | EF eLibrary";
+               $message = "Welcome to the EF eLibrary!\n\nPlease verify your account by clicking the link below.\n\n <a href=''>INSERT LINK HERE :V</a> \n\nThis is an automatically-generated message. Please don't reply to this address.";
+               $headers = "From: noreply@ef.com";
+               mail($to_email_address,$subject,$message,$headers);
+               echo "signup successful! Please verify your email address at $email.";
             }
-            disconnectDB($dbconn,$dbname);
          } else echo "a non-POST request - see system admin";
-         // redirect user to login page on success
-         header("login.html") // @TODO: check and correct this
       ?> 
    </body>
 </html>

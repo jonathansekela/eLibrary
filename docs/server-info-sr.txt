@@ -1,5 +1,5 @@
-localhost
+elibrary-db.csnxcrn9mkkh.ap-northeast-2.rds.amazonaws.com
 sz12_library
-sz12_admin
+elib_user
 efef@123
 3306
