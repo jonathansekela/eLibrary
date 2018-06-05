@@ -39,7 +39,7 @@
                mail($to_email_address,$subject,$message,$headers);
                echo "signup successful! Please verify your email address at $email.";
             }
-         } else echo "a non-POST request - see system admin";
+         } else echo "a non-POST request - see system admin.";
       ?> 
    </body>
 </html>
