@@ -1,4 +1,4 @@
-# eLibrary 0.2.3
+# eLibrary 0.2.4
 ### EF eLibrary Web-application.
 #### Purpose: self-service mobile library web-application
 As of April 25th, 2018, I feel comfortable enough with the state of the application to put it on GitHub and treat it as more of a professional development. Thus, the GitHub repository and the readme. This will help me keep track of developments as they come, as well as direct people to projects and work done online.
@@ -44,6 +44,9 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
     * index page redirects to login w/o cookie
 
 ##### Change-log
+- 2018/06/14: added server-side email verification to signup page
+   - added php/validate-user.php
+   - modified js/signup.js and signup.html
 - 2018/06/05: worked on user sign-up and validation
    - added php/validate-user.php
    - disabled JsQRScanner to prevent problems with AWS permissions
