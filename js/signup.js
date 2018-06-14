@@ -27,6 +27,8 @@ function isAnInt(aNum)
 }
 //=======
 
+// function validates email client-side, then
+// checks db for identical email addresses
 function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
   correct=RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   if (!correct.test(email.value)) {
@@ -34,8 +36,31 @@ function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
     email.value="";
     email.focus();
     return false;
+  } else {
+    // check db for identical email address
+    $.ajax({
+      type: "POST",
+      url: "php/validate-email.php",
+      dataType: "text",
+      data:
+      {
+        email: email.value
+      },
+      success: function(result) {
+        if (result === "0") {
+          return true;
+        } else {
+          alert("Error: user with that email already exists");
+          email.value="";
+          email.focus();
+          return false;
+        }
+      },
+      error: function(xhr, status, error) {
+        alert("function validateemail: " + status + ' ||| ' + error);
+      }
+    });
   }
-  return true;
 }
 //=======
 
