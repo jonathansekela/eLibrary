@@ -34,7 +34,7 @@
                // @TODO: send verification email - doesn't work on localhost, need actual webserver
                $to_email_address = $email;
                $subject = "Please verify your account | EF eLibrary";
-               $message = "Welcome to the EF eLibrary!\n\nPlease verify your account by clicking the link below.\n\n <a href=''>INSERT LINK HERE :V</a> \n\nThis is an automatically-generated message. Please don't reply to this address.";
+               $message = "Welcome to the EF eLibrary! <br> Please verify your account by clicking the link below. <br> <a href='13.125.196.197/php/validate-user.php'>Click here! :D</a> <br> This is an automatically-generated message. Please don't reply to this address.";
                $headers = "From: noreply@ef.com";
                mail($to_email_address,$subject,$message,$headers);
                echo "signup successful! Please verify your email address at $email.";
