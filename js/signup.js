@@ -50,7 +50,8 @@ function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
         if (result === "0") {
           return true;
         } else {
-          alert("Error: user with that email already exists");
+          alert(result);
+          // alert("Error: user with that email already exists");
           email.value="";
           email.focus();
           return false;
