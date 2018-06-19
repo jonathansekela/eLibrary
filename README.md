@@ -26,7 +26,7 @@ As of April 25th, 2018, I feel comfortable enough with the state of the applicat
     * [ ] AWS RDS
       * [x] create MySQL server instance
       * [x] migrate schema from admin computer to instance
-      * consistent, successful connection from EC2 to RDS
+      * [ ] consistent, successful connection from EC2 to RDS
     * Fix AWS web-server permissions to allow js access to webcam
       * **update:** EC2 denies webcam access. camera feature will not work with current setup; need a dedicated server with in-house permissions granted.
  3. __Admin page__
