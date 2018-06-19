@@ -3,7 +3,7 @@ require(utility.php);
 
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$email = cleanInput($_POST["email"]);
-	logMsg("validating user email $email...")
+	logMsg("validating user email $email...");
 	$dbname="../docs/server-info-sr.txt";
 	logIntoDataBase($dbconn, $dbname);
 	$query="SELECT 	email
@@ -17,6 +17,5 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	}
 	// disconnect db when finished
 	disconnectDB($dbconn,$dbname);
-}
-
+} else echo "a non-POST request - see system admin.";
 ?>
