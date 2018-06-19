@@ -1,5 +1,5 @@
 <?php
-require(utility.php);
+require('utility.php');
 
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$email = cleanInput($_POST["email"]);
