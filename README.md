@@ -8,16 +8,20 @@ Parents will sign up with their email, password, phone number, student name, and
 * [jQuery](https://code.jquery.com/jquery-3.3.1.min.js "Production jQuery download link")
 
 #### Current To-Do
- 1. __Server Laptop__
-    * [ ] _Acquire_ server laptop :v
+ 1. __In-house Server Laptop__
+    * [ ] Acquire server laptop
     * [ ] Developer mode on
     * [ ] Bash shell enabled and installed
     * [ ] LAMP/WAMP stack working properly
+       * [ ] MySQLi extension
+       * [ ] apache
+       * [ ] MySQL database
     * [ ] MySQLWorkbench installed
     * [ ] code editor:
         * [ ] Atom
         * [ ] Notepad++
     * [ ] Admin password would make all this run _so much_ smoother...
+    * [ ] IT team cooperation
  2. __AWS Site__
     * [x] EC2 instance
     * [x] LAMP stack
@@ -27,8 +31,9 @@ Parents will sign up with their email, password, phone number, student name, and
       * [x] create MySQL server instance
       * [x] migrate schema from admin computer to instance
       * [ ] consistent, successful connection from EC2 to RDS
-    * Fix AWS web-server permissions to allow js access to webcam
-      * **update:** EC2 denies webcam access. camera feature will not work with current setup; need a dedicated server with in-house permissions granted.
+    * [ ] Fix AWS web-server permissions to allow js access to webcam
+      * [ ] **update:** EC2 denies webcam access. camera feature will not work with current setup; need a dedicated server with in-house permissions granted.
+      * [ ] could also ask for special AWS permissions, but this route seems unlikely to come to fruition
  3. __Admin page__
     * [x] Look at books
     * [ ] Add book
