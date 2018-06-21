@@ -1,7 +1,7 @@
 # eLibrary 0.2.5
 ### EF eLibrary Web-application.
 #### Purpose: self-service mobile library web-application
-As of April 25th, 2018, I feel comfortable enough with the state of the application to put it on GitHub and treat it as more of a professional development. Thus, the GitHub repository and the readme. This will help me keep track of developments as they come, as well as direct people to projects and work done online.
+Parents will sign up with their email, password, phone number, student name, and WeChat contact information. They can scan a book's QR code to check the book out, and they can take it home to read on their own. After 1-2 weeks, members with checked out books will be notified that their book needs to be returned.
 ##### Dependencies:
 * [JsQrScanner](https://github.com/jbialobr/JsQRScanner "JavaScript QR Scanner for HTML5 Supporting Browsers")
 * [Bootstrap](https://getbootstrap.com/ "Bootstrap: the most popular HTML, CSS, and JS library in the world")
