@@ -1,4 +1,4 @@
-# eLibrary 0.3.5
+# eLibrary 0.3.0
 ### EF eLibrary Web-application.
 #### Purpose: self-service mobile library web-application
 Parents will sign up with their email, password, phone number, student name, and WeChat contact information. They can scan a book's QR code to check the book out, and they can take it home to read on their own. After 1-2 weeks, members with checked out books will be notified that their book needs to be returned.
