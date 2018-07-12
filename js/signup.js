@@ -29,6 +29,11 @@ function isAnInt(aNum)
 
 // function validates email client-side, then
 // checks db for identical email addresses
+
+
+// ------------------ THE PROBLEM: I'm not using callbacks with my asynchronous functions. I NEED callbacks for this stuff to work. ------------------ //
+
+
 function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
   correct=RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   if (!correct.test(email.value)) {
@@ -47,11 +52,14 @@ function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
         email: email.value
       },
       success: function(result) {
-        if (result === "0") {
+        result = JSON.parse(result);
+        if (result === null) { // no identical email found
+          console.log("validateemail(): result is null, no identical email found");
           return true;
-        } else {
-          alert(result);
-          // alert("Error: user with that email already exists");
+        } else { // identical email found
+          console.log("validateemail(): result is not null, identical email was found");
+          alert(result.email);
+          alert("Error: user with that email already exists");
           email.value="";
           email.focus();
           return false;
@@ -85,8 +93,16 @@ function validatepasswords(pwd, pwdconf) {
 }
 
 function validate(form) {
-  if(!validateemail(form.email)) return false;
-  if(!validatepasswords(form.password, form.password_confirmation)) return false;
+  // validate email
+  if(!validateemail(form.email)) {
+    console.log("validate(): email not valid.");
+    return false;
+  }
+  // validate password and password confirmation
+  if(!validatepasswords(form.password, form.password_confirmation)) {
+    console.log("validate(): passwords not valid.");
+    return false;
+  }
 
   return true;
 }

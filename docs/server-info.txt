@@ -1,5 +1,11 @@
-Server: elibrary-db.csnxcrn9mkkh.ap-northeast-2.rds.amazonaws.com
+AWS Server: elibrary-db.csnxcrn9mkkh.ap-northeast-2.rds.amazonaws.com
 Name: sz12_library
 Username: elib_user
+Password: efef@123
+Port number: 3306
+
+Localhost server: localhost
+Name: sz12_library
+Username: sz12_admin
 Password: efef@123
 Port number: 3306

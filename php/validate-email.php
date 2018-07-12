@@ -2,7 +2,7 @@
 require('utility.php');
 
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
-	$email = cleanInput($_POST["email"]);
+	$email = strtolower(cleanInput($_POST["email"])); // lower case
 	logMsg("validating user email $email...");
 	$dbname="../docs/server-info-sr.txt";
 	logIntoDataBase($dbconn, $dbname);
@@ -10,11 +10,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			FROM 	users u
 			WHERE 	u.email = '$email';";
 	$result = $dbconn->query($query);
+
+	$myArray = array();
 	if ($result) {
-		echo json_encode($result);
-	} else {
-		echo "0";
-	}
+		while($row = $result->fetch_assoc()) {
+            $myArray[] = $row;
+    	}
+		echo json_encode($myArray[0]);
+	} else echo "ERROR: unsuccessful query";
 	// disconnect db when finished
 	disconnectDB($dbconn,$dbname);
 } else echo "a non-POST request - see system admin.";

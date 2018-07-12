@@ -14,7 +14,7 @@ function isempty(aStr) {
 
 function isDigit(aChar)
 {
-  return (aChar >= '0' && aChar <= '9');
+  return (aChar >== '0' && aChar <== '9');
 }
 //=======
 

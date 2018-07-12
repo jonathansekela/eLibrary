@@ -49,14 +49,14 @@ function isOverdue (booksDueDate) {
     mdy = todaysDate.substr(0, 9); // format: [m]m/[d]d/yyyy
     let thisYear = ""; let thisMonth = ""; let today = "";
     // get today
-    while (mdy[0] != '/') {
+    while (mdy[0] !== '/') {
         thisMonth += mdy[0];
         mdy = mdy.substr(1);
     }
     today = parseInt(today);
     mdy = mdy.substr(1); // remove '/'
     // get thisMonth
-    while (mdy[0] != '/') {
+    while (mdy[0] !== '/') {
         today += mdy[0];
         mdy = mdy.substr(1);
     }

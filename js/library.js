@@ -54,7 +54,6 @@ function returnBook(qrcodeNo, userID) {
 
 // Function to check if a book is in the db or not
 // ONLY returns true or false
-// @TODO: delete error alert() when no longer required
 function isInLibrary(bookID, callback) {
     let bookAvail = 0;
     $.ajax({
@@ -67,7 +66,7 @@ function isInLibrary(bookID, callback) {
         // if book is available, return true. else, return false.
         success: function(result) {
             let obj = JSON.parse(result);
-            callback(obj.is_available == 1)
+            callback(obj.is_available === 1)
         },
         error: function(xhr, status, error) {
             alert(status + ' ' + error);
@@ -105,7 +104,7 @@ function getBook(bookID, userNo) {
                         }
                     }
                 // user has no overdue or currently checked out books
-                if (response == "") {// @TODO: Clean this statement up somehow
+                if (response === "") {// @TODO: Clean this statement up somehow
                     response += "Would you like to checkout " + scannedTitle + "?"
                     + "<div class='btn-group' role='group' aria-label='...'><button type='button' class='btn btn-default' onClick='checkout(" + scannedqrcode + ", " + userNo + ");'>Yes</button><button type='button' class='btn btn-default'>No</button></div>";
                 }

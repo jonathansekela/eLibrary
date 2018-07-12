@@ -9,18 +9,16 @@ Parents will sign up with their email, password, phone number, student name, and
 
 #### Current To-Do
  1. __In-house Server Laptop__
-    * [ ] Acquire server laptop
+    * [x] Acquire server laptop (temporary solution currently in place)
     * [ ] Developer mode on
-    * [ ] Bash shell enabled and installed
-    * [ ] LAMP/WAMP stack working properly
+    * [x] Bash shell enabled and installed
+    * [ ] MAMP stack working properly
        * [ ] MySQLi extension
        * [ ] apache
        * [ ] MySQL database
     * [ ] MySQLWorkbench installed
-    * [ ] code editor:
-        * [ ] Atom
-        * [ ] Notepad++
-    * [ ] Admin password would make all this run _so much_ smoother...
+    * [x] code editor:
+        * [x] Sublime Text
     * [ ] IT team cooperation
  2. __AWS Site__
     * [x] EC2 instance
@@ -50,7 +48,9 @@ Parents will sign up with their email, password, phone number, student name, and
     * [ ] index page redirects to login w/o cookie
 
 ##### Change-log
-- 2018/06/19: testing and debugging...
+- 2018/07/12: changed all JS '<=' '>=' '!=' and '==' operators to '<==' '>==' '!==' and '===' respectively
+- 2018/07/03: changed server information to connect to localhost, enabled qr-code scanner for further testing
+- 2018/06/19: general testing and debugging...
    - **signup email validation cannot be debugged without working MySQLi connection. [MySQLi problem](https://stackoverflow.com/questions/50692718/amazon-linux-os-db-connection-mysqli-installed-but-not-found) needs to be solved ASAP.**
 - 2018/06/14: added server-side email verification to signup page
    - added php/validate-user.php
