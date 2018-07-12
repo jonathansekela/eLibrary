@@ -49,6 +49,7 @@ Parents will sign up with their email, password, phone number, student name, and
 
 ##### Change-log
 - 2018/07/12: changed all JS '<=' '>=' '!=' and '==' operators to '<==' '>==' '!==' and '===' respectively
+   - Signup and Login JS need to be altered to take into account Javascript's asynchronous nature. Callbacks will be implemented for email validity checks
 - 2018/07/03: changed server information to connect to localhost, enabled qr-code scanner for further testing
 - 2018/06/19: general testing and debugging...
    - **signup email validation cannot be debugged without working MySQLi connection. [MySQLi problem](https://stackoverflow.com/questions/50692718/amazon-linux-os-db-connection-mysqli-installed-but-not-found) needs to be solved ASAP.**
