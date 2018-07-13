@@ -48,6 +48,7 @@ Parents will sign up with their email, password, phone number, student name, and
     * [ ] index page redirects to login w/o cookie
 
 ##### Change-log
+- 2018/07/13: added callback to signup.js validateemail function
 - 2018/07/12: changed all JS '<=' '>=' '!=' and '==' operators to '<==' '>==' '!==' and '===' respectively
    - Signup and Login JS need to be altered to take into account Javascript's asynchronous nature. Callbacks will be implemented for email validity checks
 - 2018/07/03: changed server information to connect to localhost, enabled qr-code scanner for further testing
