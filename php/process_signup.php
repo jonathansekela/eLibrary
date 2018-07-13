@@ -13,7 +13,7 @@
       <?php
          require("utility.php");
          if($_SERVER["REQUEST_METHOD"]=="POST") {
-            $email = cleanInput($_POST["email"]);
+            $email = cleanInput(strtolower($_POST["email"]));
             $password = password_hash(cleanInput($_POST["password"]), PASSWORD_DEFAULT);
 
             logMsg('Storing data for: '.$email);

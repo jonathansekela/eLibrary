@@ -29,21 +29,7 @@ function isAnInt(aNum)
 
 // function validates email client-side, then
 // checks db for identical email addresses
-// regarding the callback function: There's NO WAY this is a good idea...
-function validateemail(email, callback = function(result) {
-                                          result = JSON.parse(result);
-                                          if (result === null) { // no identical email found
-                                            console.log("validateemail(): result is null, no identical email found");
-                                            return true;
-                                          } else { // identical email found
-                                            console.log("validateemail(): result is not null, identical email was found");
-                                            alert(result.email);
-                                            alert("Error: user with that email already exists");
-                                            email.value="";
-                                            email.focus();
-                                            return false;
-                                          }
-}) { // RFC 5322 Official Standard 2018/04/05
+function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
   correct=RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   if (!correct.test(email.value)) {
     alert("Error: Invalid entry for email");
@@ -61,10 +47,22 @@ function validateemail(email, callback = function(result) {
         email: email.value
       },
       success: function(result) {
-        callback(result);
+        result = JSON.parse(result);
+        if (result === null) { // no identical email found
+          console.log("validateemail(): result is null, no identical email found");
+          return true;
+        } else { // identical email found
+          console.log("validateemail(): result is not null, identical email was found");
+          alert(result.email);
+          alert("Error: user with that email already exists");
+          email.value="";
+          email.focus();
+          return false;
+        }
       },
       error: function(xhr, status, error) {
-        alert("function validateemail: " + status + ' ||| ' + error);
+        console.log("function validateemail: " + xhr + " | " + status + " | " + error);
+        alert("function validateemail: " + xhr + " | " + status + ' | ' + error);
       }
     });
   }
@@ -89,18 +87,23 @@ function validatepasswords(pwd, pwdconf) {
   }
   return true;
 }
+//=======
 
-function validate(form) {
+function validate(form, callback = function(emailres, pwres) {
   // validate email
-  if(!validateemail(form.email)) {
+  if(!emailres) {
     console.log("validate(): email not valid.");
     return false;
   }
   // validate password and password confirmation
-  if(!validatepasswords(form.password, form.password_confirmation)) {
+  if(!pwres) {
     console.log("validate(): passwords not valid.");
     return false;
   }
 
   return true;
+}) {
+  var emailres = validateemail(form.email);
+  var pwres = validatepasswords(form.password, form.password_confirmation);
+  callback(emailres, pwres);
 }

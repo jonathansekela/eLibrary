@@ -141,9 +141,7 @@ function getMyBooks(user, callback = function(result) {
             user: user
         },
         dataType: "json",
-        success: function(result) {
-            callback(result);
-        },
+        success: callback(result),
         error: function(xhr, status, error) {
             alert("getMyBooks error: " + xhr + ' ||| ' + status + ' ||| ' + error);
         }
