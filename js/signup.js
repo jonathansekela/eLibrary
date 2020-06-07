@@ -63,6 +63,7 @@ function validateemail(email) { // RFC 5322 Official Standard 2018/04/05
       error: function(xhr, status, error) {
         console.log("function validateemail: " + xhr + " | " + status + " | " + error);
         alert("function validateemail: " + xhr + " | " + status + ' | ' + error);
+        return false;
       }
     });
   }
@@ -89,21 +90,20 @@ function validatepasswords(pwd, pwdconf) {
 }
 //=======
 
-function validate(form, callback = function(emailres, pwres) {
-  // validate email
-  if(!emailres) {
-    console.log("validate(): email not valid.");
-    return false;
-  }
-  // validate password and password confirmation
-  if(!pwres) {
-    console.log("validate(): passwords not valid.");
-    return false;
-  }
+function validate(form, emailcallback, pwdcallback) {
+  var emailres = emailcallback(form.email);
+  var pwdres = pwdcallback(form.password, form.password_confirmation);
+  return emailres && pwdres;
+  // // validate email
+  // if(!validateemail(form.email)) {
+  //   console.log("validate(): email not valid.");
+  //   return false;
+  // }
+  // // validate password and password confirmation
+  // if(!validatepasswords(form.password, form.password_confirmation)) {
+  //   console.log("validate(): passwords not valid.");
+  //   return false;
+  // }
 
-  return true;
-}) {
-  var emailres = validateemail(form.email);
-  var pwres = validatepasswords(form.password, form.password_confirmation);
-  callback(emailres, pwres);
+  // return true;
 }
